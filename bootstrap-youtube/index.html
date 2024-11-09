@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITube-Anasayfa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #181818;
+            color: #9b59b6;
+        }
+
+        .navbar,
+        .side-menu {
+            background-color: #212121;
+        }
+
+        .nav-link {
+            color: #9b59b6;
+        }
+
+        .nav-link:hover {
+            color: #6a0dad;
+        }
+
+        .side-menu .nav-link:hover,
+        .categories .btn:hover,
+        .video-card:hover,
+        .search-form .btn-outline-light:hover {
+            background-color: #ffd700 !important;
+            color: #6a0dad !important;
+        }
+
+        .video-card {
+            background-color: #282828;
+            border: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .video-card .card-title,
+        .video-card .card-text {
+            color: #fff;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+            background-color: #ffd700 !important;
+            color: #6a0dad !important;
+        }
+
+        .video-card:hover .card-title,
+        .video-card:hover .card-text {
+            color: #6a0dad !important;
+        }
+
+
+        .search-form {
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .search-form .form-control {
+            background-color: #282828;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .search-form .form-control:focus {
+            border-color: #ffd700;
+            box-shadow: none;
+        }
+
+        @media (min-width: 768px) {
+            .side-menu {
+                display: block;
+                min-height: 100vh;
+                padding-top: 20px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .side-menu {
+                display: none;
+            }
+
+            .navbar-brand {
+                margin-right: auto;
+            }
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        #menu-toggle:checked+.side-menu {
+            display: block;
+            position: fixed;
+            width: 200px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #212121;
+            padding-top: 20px;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger-menu d-md-none">☰</label>
+            <a class="navbar-brand" href="index.html"
+                style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><img
+                    src="logo.png" alt="Logo" height="100">ITube</a>
+            <form class="d-flex search-form" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 side-menu d-md-block">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shorts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Subscriptions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Library</a></li>
+                </ul>
+                <hr>
+                <h6>Explore</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Trending</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gaming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sports</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-10">
+
+                <div class="categories d-flex flex-wrap justify-content-start mb-3">
+                    <button class="btn btn-outline-light me-2">All</button>
+                    <button class="btn btn-outline-light me-2">Gaming</button>
+                    <button class="btn btn-outline-light me-2">Live</button>
+                    <button class="btn btn-outline-light me-2">Animation</button>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/MyybMyCi1sk" src="warband.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Mount and Blade Soundtrack - Swadian Hall</h6>
+                                <p class="card-text">F33bs • 1M views • 14 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/FSVHx23ByhM" src="ac2.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Assassin's Creed 2 OST / Jesper Kyd - Ezio's Family (Track 03)
+                                </h6>
+                                <p class="card-text">Ubisoft Music • 40M views • 10 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/PvT8Kx1WC64" src="gta4.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Grand Theft Auto IV Theme Song</h6>
+                                <p class="card-text">yaqxswcdev • 21M views • 9 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img  src="persona3.png" href="https://youtu.be/bK8vpWIvA9o" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Persona 3 OST - Battle Hymn of the Soul</h6>
+                                <p class="card-text">Bosquez88 • 1.5M views • 12 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/lKcy4hLvzgI" src="persona4.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Heartbeat, Heartbreak</h6>
+                                <p class="card-text">Shihoko Hirata • 3.2M views • 4 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/7qfbi3HACV8" src="gtasa.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Grand Theft Auto: San Andreas (Official Theme Song)</h6>
+                                <p class="card-text">Michael Hunter • 1.8M views • 1 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/MyybMyCi1sk" src="warband.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Mount and Blade Soundtrack - Swadian Hall</h6>
+                                <p class="card-text">F33bs • 1M views • 14 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/FSVHx23ByhM" src="ac2.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Assassin's Creed 2 OST / Jesper Kyd - Ezio's Family (Track 03)
+                                </h6>
+                                <p class="card-text">Ubisoft Music • 40M views • 10 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/PvT8Kx1WC64" src="gta4.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Grand Theft Auto IV Theme Song</h6>
+                                <p class="card-text">yaqxswcdev • 21M views • 9 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/bK8vpWIvA9o" src="persona3.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Persona 3 OST - Battle Hymn of the Soul</h6>
+                                <p class="card-text">Bosquez88 • 1.5M views • 12 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/lKcy4hLvzgI" src="persona4.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Heartbeat, Heartbreak</h6>
+                                <p class="card-text">Shihoko Hirata • 3.2M views • 4 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card video-card">
+                            <img href="https://youtu.be/7qfbi3HACV8" src="gtasa.png" alt="Thumbnail">
+                            <div class="card-body">
+                                <h6 class="card-title">Grand Theft Auto: San Andreas (Official Theme Song)</h6>
+                                <p class="card-text">Michael Hunter • 1.8M views • 1 years ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
